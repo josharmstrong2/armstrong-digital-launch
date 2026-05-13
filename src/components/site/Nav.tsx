@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "@tanstack/react-router";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,19 +15,20 @@ export function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
-        <a href="#top" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-[image:var(--gradient-accent)] shadow-[var(--shadow-glow)]" />
           <span className="font-bold tracking-tight text-foreground">
             Armstrong<span className="text-primary">.</span>
           </span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#included" className="hover:text-foreground transition-colors">What's included</a>
-          <a href="#how" className="hover:text-foreground transition-colors">How it works</a>
-          <a href="#about" className="hover:text-foreground transition-colors">About</a>
+          <a href="/#included" className="hover:text-foreground transition-colors">What's included</a>
+          <a href="/#how" className="hover:text-foreground transition-colors">How it works</a>
+          <Link to="/pricing" className="hover:text-foreground transition-colors" activeProps={{ className: "text-foreground" }}>Pricing</Link>
+          <a href="/#about" className="hover:text-foreground transition-colors">About</a>
         </nav>
         <a
-          href="#contact"
+          href="/#contact"
           className="text-sm font-medium px-4 py-2 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
         >
           Get started
