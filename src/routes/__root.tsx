@@ -76,10 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Custom websites for small businesses — built, hosted, and maintained for you. Get your free website from Armstrong Digital." },
       { name: "author", content: "Armstrong Digital" },
       { property: "og:title", content: "Armstrong Digital — Custom Websites for Small Business" },
-      { property: "og:description", content: "Custom websites for small businesses — built, hosted, and maintained for you." },
+      { property: "og:description", content: "Custom websites for small businesses — built, hosted, and maintained for you. Get your free website from Armstrong Digital." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Armstrong Digital — Custom Websites for Small Business" },
+      { name: "twitter:description", content: "Custom websites for small businesses — built, hosted, and maintained for you. Get your free website from Armstrong Digital." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87c6e715-92eb-4b66-b8f1-fce92111c31f/id-preview-630f172b--440f89bf-bb20-4215-a3d5-4618402aec2f.lovable.app-1778688756596.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87c6e715-92eb-4b66-b8f1-fce92111c31f/id-preview-630f172b--440f89bf-bb20-4215-a3d5-4618402aec2f.lovable.app-1778688756596.png" },
     ],
     links: [
       {
