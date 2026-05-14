@@ -2,18 +2,42 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Reveal } from "./Reveal";
+import { supabase } from "@/integrations/supabase/client";
 
 export function Contact() {
   const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get("name") ?? "").trim(),
+      business: String(fd.get("business") ?? "").trim(),
+      email: String(fd.get("email") ?? "").trim(),
+      message: String(fd.get("message") ?? "").trim(),
+    };
+
+    if (!payload.name || !payload.business || !payload.email || !payload.message) {
+      toast.error("Please fill in every field.");
+      return;
+    }
+    if (payload.message.length > 4000) {
+      toast.error("Message is too long.");
+      return;
+    }
+
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Thanks! I'll be in touch within 24 hours.");
-      (e.target as HTMLFormElement).reset();
-    }, 600);
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+    setSubmitting(false);
+
+    if (error) {
+      toast.error("Something went wrong. Please email jricharm7@gmail.com directly.");
+      return;
+    }
+
+    toast.success("Thanks! I'll be in touch within 24 hours.");
+    form.reset();
   };
 
   return (
