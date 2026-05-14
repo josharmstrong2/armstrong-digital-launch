@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 const steps = [
   {
     n: "01",
@@ -18,35 +20,43 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how" className="relative py-32 px-6 border-t border-border">
-      <div className="max-w-7xl mx-auto">
-        <div className="max-w-2xl mb-20">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">How it works</p>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-foreground">
-            Three steps.<br />
+    <section id="how" className="relative py-32 md:py-40 px-6 md:px-10 bg-background">
+      <div className="max-w-[1400px] mx-auto">
+        <Reveal>
+          <div className="flex items-baseline gap-4 mb-4">
+            <span className="font-mono text-sm text-primary">02</span>
+            <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              How it works
+            </span>
+          </div>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="font-display text-5xl md:text-7xl font-semibold tracking-[-0.04em] text-foreground leading-[0.95]">
+            Three steps.{" "}
             <span className="text-muted-foreground">Zero stress.</span>
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="relative">
-          {/* connecting line */}
-          <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-
-          <div className="grid md:grid-cols-3 gap-12 md:gap-8 relative">
-            {steps.map((s) => (
-              <div key={s.n} className="relative">
-                <div className="h-24 w-24 rounded-full bg-card border border-border flex items-center justify-center mb-6 relative z-10">
-                  <span className="text-3xl font-bold bg-[image:var(--gradient-accent)] bg-clip-text text-transparent">
-                    {s.n}
-                  </span>
+        <div className="mt-24 divide-y divide-border border-y border-border">
+          {steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 120}>
+              <div className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 group">
+                <div className="md:col-span-2">
+                  <span className="font-mono text-sm text-primary">{s.n}</span>
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-3 tracking-tight">
-                  {s.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed max-w-sm">{s.desc}</p>
+                <div className="md:col-span-6">
+                  <h3 className="font-display text-3xl md:text-5xl font-semibold tracking-[-0.035em] text-foreground group-hover:text-primary transition-colors duration-500">
+                    {s.title}
+                  </h3>
+                </div>
+                <div className="md:col-span-4">
+                  <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
