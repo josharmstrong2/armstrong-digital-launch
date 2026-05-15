@@ -44,7 +44,7 @@ export function About() {
               <div className="rounded-2xl border border-border bg-card/60 p-8 md:p-10">
                 <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-muted-foreground">
                   <span>Founder</span>
-                  <span className="font-mono">Est. 2025</span>
+                  <span className="font-mono">Est. 2026</span>
                 </div>
                 <div className="mt-10 font-display text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
                   Armstrong<span className="text-primary">.</span>
