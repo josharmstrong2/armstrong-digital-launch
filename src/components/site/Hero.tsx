@@ -71,7 +71,7 @@ export function Hero() {
             <div className="grid grid-cols-3 gap-6 md:gap-12 max-w-3xl">
               {[
                 ["$0", "upfront"],
-                ["7–14 days", "to launch"],
+                ["5–10 days", "to launch"],
                 ["100%", "handled for you"],
               ].map(([k, v]) => (
                 <div key={v}>
