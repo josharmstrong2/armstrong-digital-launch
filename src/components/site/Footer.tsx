@@ -23,10 +23,10 @@ export function Footer() {
           </div>
           <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-8 text-sm">
             <a
-              href="mailto:jricharm7@gmail.com"
+              href="mailto:josh@armstrong-digital.com"
               className="text-muted-foreground hover:text-foreground transition"
             >
-              jricharm7@gmail.com
+              josh@armstrong-digital.com
             </a>
             <a
               href="tel:+12483092722"
