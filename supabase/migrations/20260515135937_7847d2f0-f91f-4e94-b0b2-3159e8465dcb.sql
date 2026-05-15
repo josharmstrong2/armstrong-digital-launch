@@ -1,0 +1,2 @@
+ALTER TABLE public.contact_submissions ADD COLUMN phone text;
+ALTER TABLE public.contact_submissions ADD CONSTRAINT contact_submissions_phone_check CHECK (phone IS NULL OR (length(phone) BETWEEN 7 AND 30));
