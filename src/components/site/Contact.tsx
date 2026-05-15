@@ -15,11 +15,16 @@ export function Contact() {
       name: String(fd.get("name") ?? "").trim(),
       business: String(fd.get("business") ?? "").trim(),
       email: String(fd.get("email") ?? "").trim(),
+      phone: String(fd.get("phone") ?? "").trim(),
       message: String(fd.get("message") ?? "").trim(),
     };
 
-    if (!payload.name || !payload.business || !payload.email || !payload.message) {
+    if (!payload.name || !payload.business || !payload.email || !payload.phone || !payload.message) {
       toast.error("Please fill in every field.");
+      return;
+    }
+    if (payload.phone.length < 7 || payload.phone.length > 30) {
+      toast.error("Please enter a valid phone number.");
       return;
     }
     if (payload.message.length > 4000) {
@@ -32,7 +37,7 @@ export function Contact() {
     setSubmitting(false);
 
     if (error) {
-      toast.error("Something went wrong. Please email jricharm7@gmail.com directly.");
+      toast.error("Something went wrong. Please email josh@armstrong-digital.com directly.");
       return;
     }
 
@@ -71,8 +76,8 @@ export function Contact() {
             className="mt-16 rounded-3xl p-8 md:p-12 space-y-6 backdrop-blur-xl"
             style={{
               background:
-                "linear-gradient(180deg, oklch(1 0 0 / 0.04), oklch(1 0 0 / 0.01))",
-              border: "1px solid oklch(1 0 0 / 0.08)",
+                "linear-gradient(180deg, oklch(1 0 0 / 0.09), oklch(1 0 0 / 0.05))",
+              border: "1px solid oklch(1 0 0 / 0.14)",
               boxShadow: "var(--shadow-card)",
             }}
           >
@@ -80,7 +85,10 @@ export function Contact() {
               <Field label="Your name" name="name" placeholder="Jane Smith" required />
               <Field label="Business name" name="business" placeholder="Smith & Co." required />
             </div>
-            <Field label="Email" name="email" type="email" placeholder="jane@smithco.com" required />
+            <div className="grid md:grid-cols-2 gap-6">
+              <Field label="Email" name="email" type="email" placeholder="jane@smithco.com" required />
+              <Field label="Phone" name="phone" type="tel" placeholder="(555) 123-4567" required />
+            </div>
             <div>
               <label className="block text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3">
                 Tell me about your business
