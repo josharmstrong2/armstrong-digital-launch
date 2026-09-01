@@ -10,7 +10,7 @@ export function About() {
       <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-mono text-sm text-primary">03</span>
+            <span className="font-mono text-sm text-primary">08</span>
             <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
               About
             </span>

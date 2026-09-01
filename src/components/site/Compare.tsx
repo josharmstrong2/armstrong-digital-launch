@@ -9,13 +9,13 @@ const rows = [
   ["Who you deal with", "Multiple vendors and services", "One company handles everything"],
 ];
 
-export function Compare() {
+export function Compare({ label = "05" }: { label?: string }) {
   return (
     <section id="why" className="relative py-28 md:py-36 px-6 md:px-10 bg-background">
       <div className="max-w-[1200px] mx-auto">
         <Reveal>
           <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-mono text-sm text-primary">05</span>
+            <span className="font-mono text-sm text-primary">{label}</span>
             <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Why Armstrong Digital
             </span>
