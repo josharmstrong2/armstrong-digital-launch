@@ -51,8 +51,8 @@ function PricingPage() {
           </div>
         </section>
         <PricingSection label="01" />
-        <Compare />
-        <FAQ />
+        <Compare label="02" />
+        <FAQ label="03" />
         <FinalCTA />
       </main>
       <Footer />

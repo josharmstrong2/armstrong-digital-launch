@@ -41,13 +41,13 @@ export const faqs = [
   },
 ];
 
-export function FAQ() {
+export function FAQ({ label = "07" }: { label?: string }) {
   return (
     <section id="faq" className="relative py-28 md:py-36 px-6 md:px-10 bg-background">
       <div className="max-w-[1000px] mx-auto">
         <Reveal>
           <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-mono text-sm text-primary">07</span>
+            <span className="font-mono text-sm text-primary">{label}</span>
             <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
               FAQ
             </span>
