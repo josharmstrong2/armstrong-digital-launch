@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 
+const links = [
+  { href: "/#included", label: "Services" },
+  { href: "/#how", label: "How it works" },
+  { href: "/#work", label: "Work" },
+  { href: "/#faq", label: "FAQ" },
+];
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -26,17 +33,25 @@ export function Nav() {
             Armstrong<span className="text-primary">.</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-10 text-sm text-muted-foreground">
-          <a href="/#included" className="hover:text-foreground transition-colors">What's included</a>
-          <a href="/#how" className="hover:text-foreground transition-colors">How it works</a>
-          <Link to="/pricing" className="hover:text-foreground transition-colors" activeProps={{ className: "text-foreground" }}>Pricing</Link>
-          <a href="/#about" className="hover:text-foreground transition-colors">About</a>
+        <nav className="hidden md:flex items-center gap-9 text-sm text-muted-foreground">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
+              {l.label}
+            </a>
+          ))}
+          <Link
+            to="/pricing"
+            className="hover:text-foreground transition-colors"
+            activeProps={{ className: "text-foreground" }}
+          >
+            Pricing
+          </Link>
         </nav>
         <a
           href="/#contact"
           className="hidden md:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
         >
-          Get started
+          Get Started
           <span className="h-1 w-1 rounded-full bg-primary" />
         </a>
         <button
@@ -52,16 +67,36 @@ export function Nav() {
       {open && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <nav className="flex flex-col px-6 py-6 gap-1 text-base">
-            <a onClick={() => setOpen(false)} href="/#included" className="py-3 text-muted-foreground hover:text-foreground transition-colors">What's included</a>
-            <a onClick={() => setOpen(false)} href="/#how" className="py-3 text-muted-foreground hover:text-foreground transition-colors">How it works</a>
-            <Link onClick={() => setOpen(false)} to="/pricing" className="py-3 text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
-            <a onClick={() => setOpen(false)} href="/#about" className="py-3 text-muted-foreground hover:text-foreground transition-colors">About</a>
+            {links.map((l) => (
+              <a
+                key={l.href}
+                onClick={() => setOpen(false)}
+                href={l.href}
+                className="py-3 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+            <Link
+              onClick={() => setOpen(false)}
+              to="/pricing"
+              className="py-3 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Pricing
+            </Link>
+            <a
+              onClick={() => setOpen(false)}
+              href="/#about"
+              className="py-3 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              About
+            </a>
             <a
               onClick={() => setOpen(false)}
               href="/#contact"
               className="mt-4 inline-flex items-center justify-center text-sm font-medium px-4 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition"
             >
-              Get started
+              Get Started
             </a>
           </nav>
         </div>
