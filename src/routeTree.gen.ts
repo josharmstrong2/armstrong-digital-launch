@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-and-co'
 
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkArmstrongAndCoRoute = WorkArmstrongAndCoRouteImport.update({
+  id: '/work/armstrong-and-co',
+  path: '/work/armstrong-and-co',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pricing'
+  fullPaths: '/' | '/pricing' | '/work/armstrong-and-co'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pricing'
-  id: '__root__' | '/' | '/pricing'
+  to: '/' | '/pricing' | '/work/armstrong-and-co'
+  id: '__root__' | '/' | '/pricing' | '/work/armstrong-and-co'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PricingRoute: typeof PricingRoute
+  WorkArmstrongAndCoRoute: typeof WorkArmstrongAndCoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/armstrong-and-co': {
+      id: '/work/armstrong-and-co'
+      path: '/work/armstrong-and-co'
+      fullPath: '/work/armstrong-and-co'
+      preLoaderRoute: typeof WorkArmstrongAndCoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PricingRoute: PricingRoute,
+  WorkArmstrongAndCoRoute: WorkArmstrongAndCoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

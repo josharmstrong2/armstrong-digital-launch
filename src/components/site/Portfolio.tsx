@@ -1,31 +1,36 @@
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
+import clientShot from "@/assets/roofing-hero.jpg";
 
 /**
- * Demo/example projects.
- * Replace an entry with a real client project by updating the fields below
- * (set `demo: false` and add a `url` to link out to the live site).
+ * Client + demo projects.
+ * Real client work sets `demo: false` and a `to` route (or external `url`).
  */
 type Project = {
   name: string;
   industry: string;
   summary: string;
   demo: boolean;
+  to?: string;
   url?: string;
+  image?: string;
 };
 
 const projects: Project[] = [
+  {
+    name: "Armstrong & Co Roofing",
+    industry: "Roofing — Metro Detroit",
+    summary:
+      "Built from their inquiry in under a week: click-to-call in the header, storm-damage and replacement services, recent job gallery, and a free-inspection CTA on every screen.",
+    demo: false,
+    to: "/work/armstrong-and-co",
+    image: clientShot,
+  },
   {
     name: "Landscaping site concept",
     industry: "Landscaping",
     summary:
       "Service list, seasonal offerings, project gallery, and a quote request form above the fold.",
-    demo: true,
-  },
-  {
-    name: "Roofing site concept",
-    industry: "Roofing",
-    summary:
-      "Storm-damage and replacement services, service-area map, and click-to-call on every screen.",
     demo: true,
   },
   {
@@ -43,6 +48,7 @@ const projects: Project[] = [
     demo: true,
   },
 ];
+
 
 export function Portfolio() {
   return (
@@ -62,13 +68,13 @@ export function Portfolio() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground leading-[1] max-w-[18ch]">
-            Examples of what we build.
+            Live client work.
           </h2>
         </Reveal>
         <Reveal delay={180}>
           <p className="mt-6 text-muted-foreground max-w-[60ch]">
-            These are example concepts showing the structure we build for local service
-            businesses. Client projects are added here as they go live.
+            Real sites we've launched, plus example concepts showing the structure we
+            build for local service businesses.
           </p>
         </Reveal>
 
@@ -80,24 +86,45 @@ export function Portfolio() {
                   <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     {p.industry}
                   </span>
-                  {p.demo && (
-                    <span className="text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded-full border border-border text-primary">
-                      Demo
-                    </span>
-                  )}
+                  <span
+                    className={`text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded-full border ${
+                      p.demo
+                        ? "border-border text-muted-foreground"
+                        : "border-primary/50 text-primary"
+                    }`}
+                  >
+                    {p.demo ? "Demo" : "Live client"}
+                  </span>
                 </div>
-                <div
-                  aria-hidden
-                  className="mt-6 h-40 rounded-xl border border-border"
-                  style={{
-                    background:
-                      "linear-gradient(160deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.01))",
-                  }}
-                />
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={`${p.name} website preview`}
+                    loading="lazy"
+                    className="mt-6 h-40 w-full rounded-xl border border-border object-cover"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="mt-6 h-40 rounded-xl border border-border"
+                    style={{
+                      background:
+                        "linear-gradient(160deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.01))",
+                    }}
+                  />
+                )}
                 <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight text-foreground">
                   {p.name}
                 </h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">{p.summary}</p>
+                {p.to && (
+                  <Link
+                    to={p.to}
+                    className="mt-5 inline-block text-sm text-primary hover:underline"
+                  >
+                    View live site →
+                  </Link>
+                )}
                 {p.url && (
                   <a
                     href={p.url}
@@ -110,6 +137,7 @@ export function Portfolio() {
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );

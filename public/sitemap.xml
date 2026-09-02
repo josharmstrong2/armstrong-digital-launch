@@ -8,4 +8,9 @@
     <loc>https://armstrong-digital.lovable.app/pricing</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://armstrong-digital.lovable.app/work/armstrong-and-co</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>
+
