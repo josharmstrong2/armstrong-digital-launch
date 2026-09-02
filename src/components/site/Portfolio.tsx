@@ -1,31 +1,36 @@
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
+import clientShot from "@/assets/roofing-hero.jpg";
 
 /**
- * Demo/example projects.
- * Replace an entry with a real client project by updating the fields below
- * (set `demo: false` and add a `url` to link out to the live site).
+ * Client + demo projects.
+ * Real client work sets `demo: false` and a `to` route (or external `url`).
  */
 type Project = {
   name: string;
   industry: string;
   summary: string;
   demo: boolean;
+  to?: string;
   url?: string;
+  image?: string;
 };
 
 const projects: Project[] = [
+  {
+    name: "Armstrong & Co Roofing",
+    industry: "Roofing — Metro Detroit",
+    summary:
+      "Built from their inquiry in under a week: click-to-call in the header, storm-damage and replacement services, recent job gallery, and a free-inspection CTA on every screen.",
+    demo: false,
+    to: "/work/armstrong-and-co",
+    image: clientShot,
+  },
   {
     name: "Landscaping site concept",
     industry: "Landscaping",
     summary:
       "Service list, seasonal offerings, project gallery, and a quote request form above the fold.",
-    demo: true,
-  },
-  {
-    name: "Roofing site concept",
-    industry: "Roofing",
-    summary:
-      "Storm-damage and replacement services, service-area map, and click-to-call on every screen.",
     demo: true,
   },
   {
@@ -43,6 +48,7 @@ const projects: Project[] = [
     demo: true,
   },
 ];
+
 
 export function Portfolio() {
   return (
