@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 import clientShot from "@/assets/roofing-hero.jpg";
+import landscapingShot from "@/assets/landscaping-hero.jpg";
 
 /**
  * Client + demo projects.
