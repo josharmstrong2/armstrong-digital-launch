@@ -68,13 +68,13 @@ export function Portfolio() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground leading-[1] max-w-[18ch]">
-            Examples of what we build.
+            Live client work.
           </h2>
         </Reveal>
         <Reveal delay={180}>
           <p className="mt-6 text-muted-foreground max-w-[60ch]">
-            These are example concepts showing the structure we build for local service
-            businesses. Client projects are added here as they go live.
+            Real sites we've launched, plus example concepts showing the structure we
+            build for local service businesses.
           </p>
         </Reveal>
 
@@ -86,24 +86,45 @@ export function Portfolio() {
                   <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     {p.industry}
                   </span>
-                  {p.demo && (
-                    <span className="text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded-full border border-border text-primary">
-                      Demo
-                    </span>
-                  )}
+                  <span
+                    className={`text-[10px] uppercase tracking-[0.18em] px-2 py-1 rounded-full border ${
+                      p.demo
+                        ? "border-border text-muted-foreground"
+                        : "border-primary/50 text-primary"
+                    }`}
+                  >
+                    {p.demo ? "Demo" : "Live client"}
+                  </span>
                 </div>
-                <div
-                  aria-hidden
-                  className="mt-6 h-40 rounded-xl border border-border"
-                  style={{
-                    background:
-                      "linear-gradient(160deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.01))",
-                  }}
-                />
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={`${p.name} website preview`}
+                    loading="lazy"
+                    className="mt-6 h-40 w-full rounded-xl border border-border object-cover"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="mt-6 h-40 rounded-xl border border-border"
+                    style={{
+                      background:
+                        "linear-gradient(160deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.01))",
+                    }}
+                  />
+                )}
                 <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight text-foreground">
                   {p.name}
                 </h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">{p.summary}</p>
+                {p.to && (
+                  <Link
+                    to={p.to}
+                    className="mt-5 inline-block text-sm text-primary hover:underline"
+                  >
+                    View live site →
+                  </Link>
+                )}
                 {p.url && (
                   <a
                     href={p.url}
@@ -116,6 +137,7 @@ export function Portfolio() {
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
