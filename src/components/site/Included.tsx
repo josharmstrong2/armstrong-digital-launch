@@ -1,62 +1,69 @@
+import { Link } from "@tanstack/react-router";
+import { Reveal } from "./Reveal";
 import {
-  Globe,
+  Paintbrush,
   Smartphone,
   Server,
+  ShieldCheck,
   Search,
-  BarChart3,
-  Wrench,
-  PencilLine,
-  LifeBuoy,
+  MessageCircle,
 } from "lucide-react";
-import { Reveal } from "./Reveal";
 
-const items = [
-  { icon: Globe, title: "Custom Website", desc: "Professional website designed around your business." },
-  { icon: Smartphone, title: "Mobile Optimized", desc: "Looks great on phones, tablets, and desktops." },
-  { icon: Server, title: "Hosting Included", desc: "We handle hosting so you don't have to." },
-  { icon: Search, title: "Basic SEO", desc: "We optimize the site so search engines can properly understand your business." },
-  { icon: BarChart3, title: "Google Search Console", desc: "We connect and monitor your website through Google Search Console." },
-  { icon: Wrench, title: "Maintenance", desc: "We keep your website running properly." },
-  { icon: PencilLine, title: "Minor Updates", desc: "Need a photo, phone number, service, or piece of information changed? We'll handle it." },
-  { icon: LifeBuoy, title: "Support", desc: "You have someone to contact when you need help with your website." },
+const features = [
+  { icon: Paintbrush, t: "Custom Design", d: "Built specifically for your business." },
+  { icon: Smartphone, t: "Mobile Ready", d: "Looks great on phones, tablets and desktops." },
+  { icon: Server, t: "Hosting Included", d: "Fast, secure hosting handled for you." },
+  {
+    icon: ShieldCheck,
+    t: "Always Maintained",
+    d: "Security, backups, monitoring, and technical maintenance.",
+  },
+  { icon: Search, t: "SEO Ready", d: "Basic SEO setup and ongoing maintenance included." },
+  { icon: MessageCircle, t: "Ongoing Support", d: "Need a change? Just ask." },
 ];
 
 export function Included() {
   return (
-    <section
-      id="included"
-      className="relative py-28 md:py-36 px-6 md:px-10"
-      style={{ backgroundColor: "var(--surface-1)" }}
-    >
-      <div className="max-w-[1400px] mx-auto">
+    <section id="included" className="px-5 md:px-8 py-24 md:py-32 bg-background">
+      <div className="max-w-[1280px] mx-auto">
         <Reveal>
-          <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-mono text-sm text-primary">02</span>
-            <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              What's included
-            </span>
-          </div>
+          <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            What you get
+          </span>
         </Reveal>
-        <Reveal delay={100}>
-          <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground max-w-[16ch] leading-[1]">
-            Everything you need.{" "}
-            <span className="text-muted-foreground">One simple price.</span>
+        <Reveal delay={80}>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground max-w-[18ch]">
+            Everything Your Business Website Needs.
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-2xl overflow-hidden">
-          {items.map(({ icon: Icon, title, desc }, i) => (
-            <Reveal key={title} delay={i * 60}>
-              <div className="h-full p-8 bg-background hover:bg-card/70 transition-colors duration-300">
-                <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
-                <h3 className="mt-8 font-display text-xl font-semibold text-foreground tracking-tight">
-                  {title}
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((f, i) => (
+            <Reveal key={f.t} delay={i * 60}>
+              <article className="h-full rounded-2xl border border-border bg-card/40 p-7 hover:border-primary/40 transition-colors">
+                <f.icon className="h-5 w-5 text-primary" aria-hidden />
+                <h3 className="mt-5 font-display text-xl font-semibold text-foreground">
+                  {f.t}
                 </h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-              </div>
+                <p className="mt-2 text-muted-foreground leading-relaxed">{f.d}</p>
+              </article>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={120}>
+          <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
+            <p className="font-mono text-sm uppercase tracking-[0.18em] text-primary">
+              $0 Upfront • $149/Month
+            </p>
+            <Link
+              to="/get-started"
+              className="inline-flex w-fit items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Get Started
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
