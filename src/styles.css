@@ -67,34 +67,35 @@
 
 :root {
   --radius: 0.5rem;
-  /* Premium near-black with warm amber accent */
-  --background: oklch(0.14 0.003 60);          /* #0a0a0a-ish */
-  --foreground: oklch(0.96 0.012 80);          /* warm cream */
-  --surface-1: oklch(0.17 0.004 60);           /* #111 */
-  --surface-2: oklch(0.20 0.005 60);           /* #141414 / cards */
-  --card: oklch(0.18 0.004 60);
-  --card-foreground: oklch(0.96 0.012 80);
-  --popover: oklch(0.18 0.004 60);
-  --popover-foreground: oklch(0.96 0.012 80);
-  --primary: oklch(0.82 0.16 75);              /* warm amber */
-  --primary-foreground: oklch(0.14 0.01 60);
-  --primary-glow: oklch(0.86 0.17 78);
-  --secondary: oklch(0.22 0.005 60);
-  --secondary-foreground: oklch(0.96 0.012 80);
-  --muted: oklch(0.22 0.005 60);
-  --muted-foreground: oklch(0.66 0.012 70);
-  --accent: oklch(0.82 0.16 75);
-  --accent-foreground: oklch(0.14 0.01 60);
+  /* Armstrong Digital brand: near-black, off-white, lime accent */
+  --background: oklch(0.155 0.004 240);        /* #0B0D0F */
+  --foreground: oklch(0.962 0.006 90);         /* #F5F3EE */
+  --surface-1: oklch(0.195 0.005 240);
+  --surface-2: oklch(0.232 0.005 240);         /* #171A1D charcoal */
+  --card: oklch(0.215 0.005 240);
+  --card-foreground: oklch(0.962 0.006 90);
+  --popover: oklch(0.215 0.005 240);
+  --popover-foreground: oklch(0.962 0.006 90);
+  --primary: oklch(0.9 0.21 122);              /* #C8F135 lime */
+  --primary-foreground: oklch(0.155 0.004 240);
+  --primary-glow: oklch(0.93 0.2 124);
+  --secondary: oklch(0.245 0.005 240);
+  --secondary-foreground: oklch(0.962 0.006 90);
+  --muted: oklch(0.245 0.005 240);
+  --muted-foreground: oklch(0.66 0.01 240);    /* #8D9298 */
+  --accent: oklch(0.9 0.21 122);
+  --accent-foreground: oklch(0.155 0.004 240);
   --destructive: oklch(0.62 0.22 27);
   --destructive-foreground: oklch(0.98 0.005 80);
-  --border: oklch(1 0 0 / 0.08);
+  --border: oklch(1 0 0 / 0.09);
   --input: oklch(1 0 0 / 0.06);
-  --ring: oklch(0.82 0.16 75 / 0.6);
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 0%, oklch(0.82 0.16 75 / 0.18) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 20% 100%, oklch(0.82 0.16 75 / 0.10) 0%, transparent 60%);
-  --gradient-accent: linear-gradient(135deg, oklch(0.82 0.16 75), oklch(0.86 0.17 78));
-  --shadow-glow: 0 30px 80px -20px oklch(0.82 0.16 75 / 0.35);
-  --shadow-card: 0 20px 60px -20px oklch(0 0 0 / 0.6);
+  --ring: oklch(0.9 0.21 122 / 0.5);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 72% 0%, oklch(0.9 0.21 122 / 0.12) 0%, transparent 62%), radial-gradient(ellipse 70% 50% at 15% 100%, oklch(0.9 0.21 122 / 0.06) 0%, transparent 60%);
+  --gradient-accent: linear-gradient(135deg, oklch(0.9 0.21 122), oklch(0.93 0.2 124));
+  --shadow-glow: 0 24px 70px -24px oklch(0.9 0.21 122 / 0.3);
+  --shadow-card: 0 18px 50px -22px oklch(0 0 0 / 0.65);
   --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -166,12 +167,29 @@
 
 /* Reveal-on-scroll animation */
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .reveal {
   opacity: 0;
 }
 .reveal.is-visible {
-  animation: reveal-up 0.9s var(--transition-smooth) both;
+  animation: reveal-up 0.7s var(--transition-smooth) both;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    animation: none !important;
+    transform: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
