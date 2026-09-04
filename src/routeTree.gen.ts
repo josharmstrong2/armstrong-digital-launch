@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkGreenlineLandscapingRouteImport } from './routes/work/greenline-landscaping'
 import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-and-co'
@@ -17,6 +18,11 @@ import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -38,12 +44,14 @@ const WorkArmstrongAndCoRoute = WorkArmstrongAndCoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/pricing': typeof PricingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/pricing': typeof PricingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
@@ -51,6 +59,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/pricing': typeof PricingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
@@ -59,18 +68,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/how-it-works'
     | '/pricing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/how-it-works'
     | '/pricing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
   id:
     | '__root__'
     | '/'
+    | '/how-it-works'
     | '/pricing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
@@ -78,6 +90,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HowItWorksRoute: typeof HowItWorksRoute
   PricingRoute: typeof PricingRoute
   WorkArmstrongAndCoRoute: typeof WorkArmstrongAndCoRoute
   WorkGreenlineLandscapingRoute: typeof WorkGreenlineLandscapingRoute
@@ -90,6 +103,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -118,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HowItWorksRoute: HowItWorksRoute,
   PricingRoute: PricingRoute,
   WorkArmstrongAndCoRoute: WorkArmstrongAndCoRoute,
   WorkGreenlineLandscapingRoute: WorkGreenlineLandscapingRoute,
