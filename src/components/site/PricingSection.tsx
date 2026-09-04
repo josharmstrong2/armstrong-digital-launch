@@ -1,83 +1,147 @@
+import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 
-export const planFeatures = [
+const carePlan = [
   "Custom website",
+  "Up to 5 pages",
+  "Mobile responsive",
+  "Business-specific content",
+  "Contact form",
+  "Basic SEO setup",
+  "Basic SEO maintenance",
   "Hosting",
   "SSL / security",
-  "Basic SEO",
-  "Google Search Console",
-  "Maintenance",
-  "Minor updates",
-  "Support",
+  "Automated backups",
+  "Website monitoring",
+  "Technical maintenance",
+  "Reasonable website updates",
+  "Standard website features & add-ons",
+  "Domain management",
+  "Ongoing support",
 ];
 
-export function PricingSection({ label = "04" }: { label?: string }) {
+const ownershipPlan = [
+  "Custom website",
+  "Up to 5 pages",
+  "Mobile responsive",
+  "Business-specific content",
+  "Contact form",
+  "Basic SEO",
+  "Domain connection",
+  "Website launch",
+  "First-year domain registration",
+  "Hosting included",
+  "30 days post-launch support",
+  "Website ownership",
+];
+
+function Item({ children }: { children: string }) {
   return (
-    <section
-      id="pricing"
-      className="relative py-28 md:py-36 px-6 md:px-10"
-      style={{ backgroundColor: "var(--surface-1)" }}
-    >
-      <div className="max-w-[1100px] mx-auto">
+    <li className="flex items-start gap-3 text-sm text-muted-foreground">
+      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+      <span>{children}</span>
+    </li>
+  );
+}
+
+export function PricingSection() {
+  return (
+    <section id="pricing" className="px-5 md:px-8 py-24 md:py-32 bg-background">
+      <div className="max-w-[1280px] mx-auto">
         <Reveal>
-          <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-mono text-sm text-primary">{label}</span>
-            <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Pricing
-            </span>
-          </div>
+          <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            Pricing
+          </span>
         </Reveal>
-        <Reveal delay={100}>
-          <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground leading-[1] max-w-[16ch]">
-            Simple pricing.{" "}
-            <span className="text-muted-foreground">No huge upfront bill.</span>
+        <Reveal delay={80}>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground max-w-[18ch]">
+            One managed service. Two ways to start.
           </h2>
         </Reveal>
 
-        <Reveal delay={200}>
-          <div
-            className="mt-14 rounded-3xl p-8 md:p-14 border border-border"
-            style={{ background: "var(--surface-2, oklch(1 0 0 / 0.04))", boxShadow: "var(--shadow-card)" }}
-          >
-            <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
-              <div className="md:col-span-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  The Armstrong Plan
-                </div>
-                <div className="mt-6 flex items-end gap-2">
-                  <span className="font-display text-6xl md:text-7xl font-semibold tracking-[-0.05em] text-foreground">
-                    $149
-                  </span>
-                  <span className="pb-3 text-muted-foreground">/month</span>
-                </div>
-                <p className="mt-6 text-muted-foreground leading-relaxed">
-                  One plan. Everything your website needs, built and managed by one company.
-                </p>
-                <Button asChild variant="hero" size="xl" className="mt-8 w-full md:w-auto">
-                  <a href="/#contact">Get Started</a>
-                </Button>
+        <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_1fr] items-start">
+          {/* Featured: Website & Care */}
+          <Reveal>
+            <div
+              className="rounded-3xl border border-primary/40 bg-card/60 p-8 md:p-10"
+              style={{ boxShadow: "var(--shadow-glow)" }}
+            >
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="font-display text-2xl font-semibold text-foreground">
+                  Website &amp; Care
+                </h3>
+                <span className="rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary-foreground">
+                  Most popular
+                </span>
               </div>
+              <p className="mt-6 flex items-baseline gap-2">
+                <span className="font-display text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground">
+                  $149
+                </span>
+                <span className="text-muted-foreground">/month</span>
+              </p>
+              <p className="mt-3 font-mono text-sm uppercase tracking-[0.14em] text-primary">
+                $0 upfront
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                12-month initial commitment, then month-to-month.
+              </p>
 
-              <div className="md:col-span-7">
-                <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-                  {planFeatures.map((f) => (
-                    <li key={f} className="flex items-center gap-3 py-1">
-                      <Check className="h-4 w-4 text-primary shrink-0" strokeWidth={2} />
-                      <span className="text-foreground">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                {carePlan.map((f) => (
+                  <Item key={f}>{f}</Item>
+                ))}
+              </ul>
+
+              <Link
+                to="/get-started"
+                className="mt-10 inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Get Started for $0 Upfront
+              </Link>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        <Reveal delay={280}>
-          <p className="mt-8 text-center md:text-left text-muted-foreground">
-            No $3,000+ upfront website bill. No complicated packages. Just one simple
-            monthly price.
+          {/* Website Ownership */}
+          <Reveal delay={120}>
+            <div className="rounded-3xl border border-border bg-card/30 p-8 md:p-10">
+              <h3 className="font-display text-2xl font-semibold text-foreground">
+                Website Ownership
+              </h3>
+              <p className="mt-6 flex items-baseline gap-2">
+                <span className="font-display text-4xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground">
+                  $1,499
+                </span>
+                <span className="text-muted-foreground">one-time</span>
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">Own your website.</p>
+
+              <ul className="mt-8 grid gap-3">
+                {ownershipPlan.map((f) => (
+                  <Item key={f}>{f}</Item>
+                ))}
+              </ul>
+
+              <p className="mt-8 text-sm text-muted-foreground">
+                50% upfront • 50% before launch
+              </p>
+
+              <Link
+                to="/get-started"
+                className="mt-8 inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-border px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                Get Started
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={80}>
+          <p className="mt-8 text-sm text-muted-foreground max-w-[70ch]">
+            Bought your website outright? You can move to Website &amp; Care for
+            $149/month at any time to have hosting, maintenance, updates, and support
+            handled for you.
           </p>
         </Reveal>
       </div>
