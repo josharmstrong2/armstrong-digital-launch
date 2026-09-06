@@ -1,6 +1,6 @@
 # Armstrong Digital — Roadmap
 
-## Phase 1 — Website redesign (in progress)
+## Phase 1 — Website redesign (complete)
 - [x] Brand palette: near-black / off-white / lime accent, reduced-motion support
 - [x] Sticky nav: How It Works, Portfolio, Pricing, About, Get Started + phone
 - [x] Homepage: Hero, Value Props, What You Get, Portfolio Preview, How It Works,
@@ -10,7 +10,7 @@
 - [x] SEO: per-route titles, descriptions, OG tags, canonical, sitemap
 
 ## Later phases
-- [x] Portfolio demo sites: /portfolio/landscaping, /roofing, /auto-detailing, /cleaning
+- [ ] Portfolio demo sites: /portfolio/landscaping, /roofing, /auto-detailing, /cleaning
   - Existing built demos: /work/armstrong-and-co (roofing), /work/greenline-landscaping
-- [x] Email notification on new lead (needs verified sender domain)
-- [x] Client portal (not in scope yet)
+- [ ] Email notification on new lead (needs verified sender domain)
+- [ ] Client portal (not in scope yet)
