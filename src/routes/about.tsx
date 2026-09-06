@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
-import { PricingSection } from "@/components/site/PricingSection";
-import { FAQ } from "@/components/site/FAQ";
+import { About } from "@/components/site/About";
+import { WhyArmstrong } from "@/components/site/WhyArmstrong";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 
-const title = "Pricing — $149/Month Managed Websites | Armstrong Digital";
+const title = "About — Armstrong Digital";
 const description =
-  "Website & Care is $149/month with $0 upfront: custom website, hosting, security, backups, maintenance, basic SEO, and support. Or own your website for $1,499 one-time.";
-const url = "https://armstrong-digital.lovable.app/pricing";
+  "Armstrong Digital builds, hosts, and maintains professional websites for small businesses. Professional websites, personal service — built for your business, managed for you.";
+const url = "https://armstrong-digital.lovable.app/about";
 
-export const Route = createFileRoute("/pricing")({
+export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title },
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/pricing")({
     ],
     links: [{ rel: "canonical", href: url }],
   }),
-  component: PricingPage,
+  component: AboutPage,
 });
 
-function PricingPage() {
+function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
       <Nav />
@@ -34,16 +34,12 @@ function PricingPage() {
         <section className="px-5 md:px-8 pt-16 pb-4 md:pt-24">
           <div className="max-w-[1280px] mx-auto">
             <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground max-w-[16ch]">
-              Simple pricing for a fully managed website.
+              Professional Websites. Personal Service.
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-[58ch] leading-relaxed">
-              No agency retainer, no surprise invoices. Start with $0 upfront, or buy
-              your website outright.
-            </p>
           </div>
         </section>
-        <PricingSection />
-        <FAQ />
+        <About showLink={false} />
+        <WhyArmstrong />
         <FinalCTA />
       </main>
       <Footer />

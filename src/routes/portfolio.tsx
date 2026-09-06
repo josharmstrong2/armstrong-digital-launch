@@ -1,16 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
-import { PricingSection } from "@/components/site/PricingSection";
-import { FAQ } from "@/components/site/FAQ";
+import { PortfolioPreview } from "@/components/site/PortfolioPreview";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 
-const title = "Pricing — $149/Month Managed Websites | Armstrong Digital";
+const title = "Portfolio — Websites for Local Service Businesses | Armstrong Digital";
 const description =
-  "Website & Care is $149/month with $0 upfront: custom website, hosting, security, backups, maintenance, basic SEO, and support. Or own your website for $1,499 one-time.";
-const url = "https://armstrong-digital.lovable.app/pricing";
+  "Examples of professional websites designed for landscaping, roofing, auto detailing, and cleaning businesses — built and managed by Armstrong Digital.";
+const url = "https://armstrong-digital.lovable.app/portfolio";
 
-export const Route = createFileRoute("/pricing")({
+export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
       { title },
@@ -23,27 +22,26 @@ export const Route = createFileRoute("/pricing")({
     ],
     links: [{ rel: "canonical", href: url }],
   }),
-  component: PricingPage,
+  component: PortfolioPage,
 });
 
-function PricingPage() {
+function PortfolioPage() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
       <Nav />
       <main>
-        <section className="px-5 md:px-8 pt-16 pb-4 md:pt-24">
+        <section className="px-5 md:px-8 pt-16 pb-10 md:pt-24">
           <div className="max-w-[1280px] mx-auto">
-            <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground max-w-[16ch]">
-              Simple pricing for a fully managed website.
+            <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground max-w-[18ch]">
+              Websites Built for Businesses Like Yours
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-[58ch] leading-relaxed">
-              No agency retainer, no surprise invoices. Start with $0 upfront, or buy
-              your website outright.
+              Explore examples of professional websites designed for local service
+              businesses. More industry examples are on the way.
             </p>
           </div>
         </section>
-        <PricingSection />
-        <FAQ />
+        <PortfolioPreview />
         <FinalCTA />
       </main>
       <Footer />

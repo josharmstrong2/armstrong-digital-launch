@@ -1,6 +1,6 @@
 # Armstrong Digital — Roadmap
 
-## Phase 1 — Website redesign (in progress)
+## Phase 1 — Website redesign (complete)
 - [x] Brand palette: near-black / off-white / lime accent, reduced-motion support
 - [x] Sticky nav: How It Works, Portfolio, Pricing, About, Get Started + phone
 - [x] Homepage: Hero, Value Props, What You Get, Portfolio Preview, How It Works,
