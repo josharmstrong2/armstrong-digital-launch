@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as GetStartedRouteImport } from './routes/get-started'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkGreenlineLandscapingRouteImport } from './routes/work/greenline-landscaping'
 import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-and-co'
@@ -20,9 +23,24 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -44,14 +62,20 @@ const WorkArmstrongAndCoRoute = WorkArmstrongAndCoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/get-started': typeof GetStartedRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/get-started': typeof GetStartedRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
@@ -59,7 +83,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/get-started': typeof GetStartedRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
@@ -68,21 +95,30 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/get-started'
     | '/how-it-works'
+    | '/portfolio'
     | '/pricing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/get-started'
     | '/how-it-works'
+    | '/portfolio'
     | '/pricing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/get-started'
     | '/how-it-works'
+    | '/portfolio'
     | '/pricing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
@@ -90,7 +126,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  GetStartedRoute: typeof GetStartedRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
   WorkArmstrongAndCoRoute: typeof WorkArmstrongAndCoRoute
   WorkGreenlineLandscapingRoute: typeof WorkGreenlineLandscapingRoute
@@ -105,11 +144,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-it-works': {
       id: '/how-it-works'
       path: '/how-it-works'
       fullPath: '/how-it-works'
       preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -138,7 +198,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  GetStartedRoute: GetStartedRoute,
   HowItWorksRoute: HowItWorksRoute,
+  PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
   WorkArmstrongAndCoRoute: WorkArmstrongAndCoRoute,
   WorkGreenlineLandscapingRoute: WorkGreenlineLandscapingRoute,
