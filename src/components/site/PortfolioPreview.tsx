@@ -2,13 +2,19 @@ import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 import roofingShot from "@/assets/roofing-hero.jpg";
 import landscapingShot from "@/assets/landscaping-hero.jpg";
+import detailingShot from "@/assets/detailing-hero.jpg";
+import cleaningShot from "@/assets/cleaning-hero.jpg";
 
 type Item = {
   category: string;
   blurb: string;
   image?: string;
   alt?: string;
-  to?: "/work/armstrong-and-co" | "/work/greenline-landscaping";
+  to?:
+    | "/work/armstrong-and-co"
+    | "/work/greenline-landscaping"
+    | "/work/apex-auto-detailing"
+    | "/work/northline-cleaning";
 };
 
 export const portfolioItems: Item[] = [
@@ -28,13 +34,20 @@ export const portfolioItems: Item[] = [
   },
   {
     category: "Auto Detailing",
-    blurb: "Package pricing, before-and-after gallery, and simple online booking.",
+    blurb: "Flat-rate package tiers, paint correction results, and one-tap mobile booking.",
+    image: detailingShot,
+    alt: "Auto detailing website example showing a ceramic coated black car with deep gloss",
+    to: "/work/apex-auto-detailing",
   },
   {
     category: "Cleaning Services",
-    blurb: "Residential and commercial service lists, service area, and a quick quote form.",
+    blurb: "Home and office service list with flat pricing, service area, and a same-day quote.",
+    image: cleaningShot,
+    alt: "Cleaning company website example showing a bright, freshly cleaned living room",
+    to: "/work/northline-cleaning",
   },
 ];
+
 
 function Mockup({ item }: { item: Item }) {
   return (
