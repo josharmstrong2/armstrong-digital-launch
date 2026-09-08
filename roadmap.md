@@ -10,7 +10,9 @@
 - [x] SEO: per-route titles, descriptions, OG tags, canonical, sitemap
 
 ## Later phases
-- [ ] Portfolio demo sites: /portfolio/landscaping, /roofing, /auto-detailing, /cleaning
-  - Existing built demos: /work/armstrong-and-co (roofing), /work/greenline-landscaping
+- [x] Portfolio demo sites (all four categories live)
+  - /work/greenline-landscaping, /work/armstrong-and-co (roofing),
+    /work/apex-auto-detailing, /work/northline-cleaning
+
 - [ ] Email notification on new lead (needs verified sender domain)
 - [ ] Client portal (not in scope yet)
