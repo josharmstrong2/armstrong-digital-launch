@@ -15,8 +15,10 @@ import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkNorthlineCleaningRouteImport } from './routes/work/northline-cleaning'
 import { Route as WorkGreenlineLandscapingRouteImport } from './routes/work/greenline-landscaping'
 import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-and-co'
+import { Route as WorkApexAutoDetailingRouteImport } from './routes/work/apex-auto-detailing'
 
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
@@ -48,6 +50,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkNorthlineCleaningRoute = WorkNorthlineCleaningRouteImport.update({
+  id: '/work/northline-cleaning',
+  path: '/work/northline-cleaning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkGreenlineLandscapingRoute =
   WorkGreenlineLandscapingRouteImport.update({
     id: '/work/greenline-landscaping',
@@ -59,6 +66,11 @@ const WorkArmstrongAndCoRoute = WorkArmstrongAndCoRouteImport.update({
   path: '/work/armstrong-and-co',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkApexAutoDetailingRoute = WorkApexAutoDetailingRouteImport.update({
+  id: '/work/apex-auto-detailing',
+  path: '/work/apex-auto-detailing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,8 +79,10 @@ export interface FileRoutesByFullPath {
   '/how-it-works': typeof HowItWorksRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
+  '/work/apex-auto-detailing': typeof WorkApexAutoDetailingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
+  '/work/northline-cleaning': typeof WorkNorthlineCleaningRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,8 +91,10 @@ export interface FileRoutesByTo {
   '/how-it-works': typeof HowItWorksRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
+  '/work/apex-auto-detailing': typeof WorkApexAutoDetailingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
+  '/work/northline-cleaning': typeof WorkNorthlineCleaningRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,8 +104,10 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
+  '/work/apex-auto-detailing': typeof WorkApexAutoDetailingRoute
   '/work/armstrong-and-co': typeof WorkArmstrongAndCoRoute
   '/work/greenline-landscaping': typeof WorkGreenlineLandscapingRoute
+  '/work/northline-cleaning': typeof WorkNorthlineCleaningRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,8 +118,10 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/portfolio'
     | '/pricing'
+    | '/work/apex-auto-detailing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
+    | '/work/northline-cleaning'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,8 +130,10 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/portfolio'
     | '/pricing'
+    | '/work/apex-auto-detailing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
+    | '/work/northline-cleaning'
   id:
     | '__root__'
     | '/'
@@ -120,8 +142,10 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/portfolio'
     | '/pricing'
+    | '/work/apex-auto-detailing'
     | '/work/armstrong-and-co'
     | '/work/greenline-landscaping'
+    | '/work/northline-cleaning'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,8 +155,10 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
+  WorkApexAutoDetailingRoute: typeof WorkApexAutoDetailingRoute
   WorkArmstrongAndCoRoute: typeof WorkArmstrongAndCoRoute
   WorkGreenlineLandscapingRoute: typeof WorkGreenlineLandscapingRoute
+  WorkNorthlineCleaningRoute: typeof WorkNorthlineCleaningRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -179,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/northline-cleaning': {
+      id: '/work/northline-cleaning'
+      path: '/work/northline-cleaning'
+      fullPath: '/work/northline-cleaning'
+      preLoaderRoute: typeof WorkNorthlineCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/greenline-landscaping': {
       id: '/work/greenline-landscaping'
       path: '/work/greenline-landscaping'
@@ -193,6 +226,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkArmstrongAndCoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/apex-auto-detailing': {
+      id: '/work/apex-auto-detailing'
+      path: '/work/apex-auto-detailing'
+      fullPath: '/work/apex-auto-detailing'
+      preLoaderRoute: typeof WorkApexAutoDetailingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -203,8 +243,10 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute: HowItWorksRoute,
   PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
+  WorkApexAutoDetailingRoute: WorkApexAutoDetailingRoute,
   WorkArmstrongAndCoRoute: WorkArmstrongAndCoRoute,
   WorkGreenlineLandscapingRoute: WorkGreenlineLandscapingRoute,
+  WorkNorthlineCleaningRoute: WorkNorthlineCleaningRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
