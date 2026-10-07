@@ -9,35 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as HowItWorksRouteImport } from './routes/how-it-works'
-import { Route as GetStartedRouteImport } from './routes/get-started'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as WorkNorthlineCleaningRouteImport } from './routes/work/northline-cleaning'
-import { Route as WorkGreenlineLandscapingRouteImport } from './routes/work/greenline-landscaping'
-import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-and-co'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as GetStartedRouteImport } from './routes/get-started'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as WorkApexAutoDetailingRouteImport } from './routes/work/apex-auto-detailing'
+import { Route as WorkArmstrongAndCoRouteImport } from './routes/work/armstrong-and-co'
+import { Route as WorkGreenlineLandscapingRouteImport } from './routes/work/greenline-landscaping'
+import { Route as WorkNorthlineCleaningRouteImport } from './routes/work/northline-cleaning'
 
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowItWorksRoute = HowItWorksRouteImport.update({
-  id: '/how-it-works',
-  path: '/how-it-works',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GetStartedRoute = GetStartedRouteImport.update({
-  id: '/get-started',
-  path: '/get-started',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -45,14 +30,34 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkNorthlineCleaningRoute = WorkNorthlineCleaningRouteImport.update({
-  id: '/work/northline-cleaning',
-  path: '/work/northline-cleaning',
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkApexAutoDetailingRoute = WorkApexAutoDetailingRouteImport.update({
+  id: '/work/apex-auto-detailing',
+  path: '/work/apex-auto-detailing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkArmstrongAndCoRoute = WorkArmstrongAndCoRouteImport.update({
+  id: '/work/armstrong-and-co',
+  path: '/work/armstrong-and-co',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WorkGreenlineLandscapingRoute =
@@ -61,14 +66,9 @@ const WorkGreenlineLandscapingRoute =
     path: '/work/greenline-landscaping',
     getParentRoute: () => rootRouteImport,
   } as any)
-const WorkArmstrongAndCoRoute = WorkArmstrongAndCoRouteImport.update({
-  id: '/work/armstrong-and-co',
-  path: '/work/armstrong-and-co',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WorkApexAutoDetailingRoute = WorkApexAutoDetailingRouteImport.update({
-  id: '/work/apex-auto-detailing',
-  path: '/work/apex-auto-detailing',
+const WorkNorthlineCleaningRoute = WorkNorthlineCleaningRouteImport.update({
+  id: '/work/northline-cleaning',
+  path: '/work/northline-cleaning',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -163,32 +163,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/how-it-works': {
-      id: '/how-it-works'
-      path: '/how-it-works'
-      fullPath: '/how-it-works'
-      preLoaderRoute: typeof HowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/get-started': {
-      id: '/get-started'
-      path: '/get-started'
-      fullPath: '/get-started'
-      preLoaderRoute: typeof GetStartedRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -198,25 +177,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/northline-cleaning': {
-      id: '/work/northline-cleaning'
-      path: '/work/northline-cleaning'
-      fullPath: '/work/northline-cleaning'
-      preLoaderRoute: typeof WorkNorthlineCleaningRouteImport
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/greenline-landscaping': {
-      id: '/work/greenline-landscaping'
-      path: '/work/greenline-landscaping'
-      fullPath: '/work/greenline-landscaping'
-      preLoaderRoute: typeof WorkGreenlineLandscapingRouteImport
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/apex-auto-detailing': {
+      id: '/work/apex-auto-detailing'
+      path: '/work/apex-auto-detailing'
+      fullPath: '/work/apex-auto-detailing'
+      preLoaderRoute: typeof WorkApexAutoDetailingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/work/armstrong-and-co': {
@@ -226,11 +219,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkArmstrongAndCoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/apex-auto-detailing': {
-      id: '/work/apex-auto-detailing'
-      path: '/work/apex-auto-detailing'
-      fullPath: '/work/apex-auto-detailing'
-      preLoaderRoute: typeof WorkApexAutoDetailingRouteImport
+    '/work/greenline-landscaping': {
+      id: '/work/greenline-landscaping'
+      path: '/work/greenline-landscaping'
+      fullPath: '/work/greenline-landscaping'
+      preLoaderRoute: typeof WorkGreenlineLandscapingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/northline-cleaning': {
+      id: '/work/northline-cleaning'
+      path: '/work/northline-cleaning'
+      fullPath: '/work/northline-cleaning'
+      preLoaderRoute: typeof WorkNorthlineCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
