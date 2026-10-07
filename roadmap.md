@@ -8,6 +8,7 @@
 - [x] Routes: /how-it-works, /portfolio, /pricing, /about, /get-started
 - [x] Get Started page reuses existing contact_submissions lead form
 - [x] SEO: per-route titles, descriptions, OG tags, canonical, sitemap
+- [x] Contact section with Web3Forms form (submissions emailed to josh@armstrong-digital.com)
 
 ## Later phases
 - [x] Portfolio demo sites (all four categories live)
