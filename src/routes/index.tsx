@@ -9,6 +9,7 @@ import { WhyArmstrong } from "@/components/site/WhyArmstrong";
 import { PricingSection } from "@/components/site/PricingSection";
 import { FAQ, faqs } from "@/components/site/FAQ";
 import { About } from "@/components/site/About";
+import { Contact } from "@/components/site/Contact";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
@@ -94,6 +95,7 @@ function Index() {
         <PricingSection />
         <FAQ />
         <About />
+        <Contact />
         <FinalCTA />
       </main>
       <Footer />
