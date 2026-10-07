@@ -32,7 +32,8 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: Error; reset: React.ComponentProps<"button"> } & { error: Error; reset: () => void }) {
+  void (0 as unknown as import("@tanstack/react-router").ErrorComponentProps);
   console.error(error);
   const router = useRouter();
 
