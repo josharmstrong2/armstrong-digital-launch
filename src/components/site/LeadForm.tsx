@@ -19,12 +19,6 @@ const businessTypes = [
   "Other local service business",
 ];
 
-const needOptions = [
-  "New website",
-  "Website redesign",
-  "Website updates",
-  "Not sure yet",
-];
 
 export function LeadForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -38,18 +32,21 @@ export function LeadForm() {
       name: String(fd.get("name") ?? "").trim(),
       business: String(fd.get("business") ?? "").trim(),
       email: String(fd.get("email") ?? "").trim(),
-      phone: String(fd.get("phone") ?? "").trim(),
+      phone: String(fd.get("phone") ?? "").trim() || null,
       website: String(fd.get("website") ?? "").trim() || null,
       business_type: String(fd.get("business_type") ?? "").trim() || null,
-      help_with: String(fd.get("help_with") ?? "").trim() || null,
-      message: String(fd.get("message") ?? "").trim() || "—",
+      message: String(fd.get("message") ?? "").trim(),
     };
 
-    if (!payload.name || !payload.business || !payload.email || !payload.phone) {
+    if (!payload.name || !payload.business || !payload.email || !payload.business_type || !payload.message) {
       toast.error("Please fill in every required field.");
       return;
     }
-    if (payload.phone.length < 7 || payload.phone.length > 30) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email) || payload.email.length > 255) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (payload.phone && (payload.phone.length < 7 || payload.phone.length > 30)) {
       toast.error("Please enter a valid phone number.");
       return;
     }
@@ -81,7 +78,7 @@ export function LeadForm() {
           Thanks! We received your request.
         </h2>
         <p className="mt-4 text-muted-foreground max-w-[52ch] mx-auto leading-relaxed">
-          We'll review your information and reach out shortly to discuss your website.
+          Your project details were saved. We'll review them and reach out to discuss your website.
         </p>
         <Link
           to="/"
@@ -105,10 +102,10 @@ export function LeadForm() {
       </div>
       <div className="grid md:grid-cols-2 gap-6">
         <Field label="Email" name="email" type="email" placeholder="jane@smithco.com" required />
-        <Field label="Phone" name="phone" type="tel" placeholder="(555) 123-4567" required />
+        <Field label="Phone (optional)" name="phone" type="tel" placeholder="(555) 123-4567" />
       </div>
       <div className="grid md:grid-cols-2 gap-6">
-        <SelectField label="Business Type" name="business_type" options={businessTypes} />
+        <SelectField label="Business Type" name="business_type" options={businessTypes} required />
         <Field
           label="Current Website (optional)"
           name="website"
@@ -116,20 +113,20 @@ export function LeadForm() {
           placeholder="https://yoursite.com"
         />
       </div>
-      <SelectField label="What do you need?" name="help_with" options={needOptions} />
 
       <div>
         <label
           htmlFor="message"
           className="block text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3"
         >
-          Additional Information (optional)
+          Describe the Website You Need
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
-          placeholder="Anything else we should know about your business..."
+          required
+          placeholder="Your services, service area, pages you want, and anything else we should know..."
           className="w-full bg-transparent border-0 border-b border-border px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary transition resize-none text-base"
         />
       </div>
@@ -140,7 +137,7 @@ export function LeadForm() {
           disabled={submitting}
           className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
         >
-          {submitting ? "Sending..." : "Get Started"}
+          {submitting ? "Sending..." : "Request Your Website"}
         </button>
         <p className="mt-5 text-sm text-muted-foreground">
           Prefer to talk? Call{" "}
@@ -198,10 +195,12 @@ function SelectField({
   label,
   name,
   options,
+  required,
 }: {
   label: string;
   name: string;
   options: string[];
+  required?: boolean;
 }) {
   return (
     <div className="min-w-0">
@@ -215,6 +214,7 @@ function SelectField({
         id={name}
         name={name}
         defaultValue=""
+        required={required}
         className="w-full bg-transparent border-0 border-b border-border px-0 py-3 text-foreground focus:outline-none focus:border-primary transition text-base [&>option]:bg-background [&>option]:text-foreground"
       >
         <option value="">Select an option</option>

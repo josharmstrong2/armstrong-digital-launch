@@ -18,20 +18,22 @@ export function Hero() {
 
         <Reveal delay={80}>
           <h1 className="mt-8 font-display font-semibold text-foreground text-[2.6rem] sm:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.04em] max-w-[16ch]">
-            Your Website. Professionally Built. Completely Managed.
+            Professional Websites. One Simple Price.
           </h1>
         </Reveal>
 
         <Reveal delay={160}>
           <p className="mt-7 text-lg md:text-xl text-muted-foreground max-w-[54ch] leading-relaxed">
-            A professional website built around your business — with ongoing
-            management and support handled for you.
+            Get a modern, professionally designed website for your small business
+            for a one-time $1,250 fee. No monthly website subscription. No
+            unnecessary complexity. Just a professional online presence built to
+            help your business stand out and generate leads.
           </p>
         </Reveal>
 
         <Reveal delay={220}>
           <p className="mt-8 font-mono text-sm tracking-[0.18em] text-primary uppercase">
-            $0 Upfront • $149/Month
+            $1,250 — One-Time Payment
           </p>
         </Reveal>
 
@@ -41,20 +43,20 @@ export function Hero() {
               to="/get-started"
               className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Get Started for $0 Upfront
+              Get Your Website
             </Link>
             <Link
-              to="/how-it-works"
+              to="/portfolio"
               className="inline-flex items-center justify-center rounded-full border border-border px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-foreground hover:border-primary hover:text-primary transition-colors"
             >
-              See How It Works
+              View Our Work
             </Link>
           </div>
         </Reveal>
 
         <Reveal delay={340}>
           <p className="mt-8 text-sm text-muted-foreground">
-            Custom Design • Hosting • Maintenance • Support
+            Up to 5 Pages • Mobile Responsive • Basic SEO • <Link to="/pricing" className="text-primary hover:underline">See everything included</Link>
           </p>
         </Reveal>
       </div>
