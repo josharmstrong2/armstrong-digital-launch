@@ -2,38 +2,19 @@ import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-const carePlan = [
-  "Custom website",
-  "Up to 5 pages",
-  "Mobile responsive",
-  "Business-specific content",
-  "Contact form",
-  "Basic SEO setup",
-  "Basic SEO maintenance",
-  "Hosting",
-  "SSL / security",
-  "Automated backups",
-  "Website monitoring",
-  "Technical maintenance",
-  "Reasonable website updates",
-  "Standard website features & add-ons",
-  "Domain management",
-  "Ongoing support",
-];
+export const PACKAGE_NAME = "Professional Website";
+export const PACKAGE_PRICE = "$1,250";
 
-const ownershipPlan = [
-  "Custom website",
-  "Up to 5 pages",
-  "Mobile responsive",
-  "Business-specific content",
-  "Contact form",
-  "Basic SEO",
-  "Domain connection",
-  "Website launch",
-  "First-year domain registration",
-  "Hosting included",
-  "30 days post-launch support",
-  "Website ownership",
+export const packageFeatures = [
+  "Up to 5 custom-designed website pages",
+  "Mobile-responsive design",
+  "Contact form integration",
+  "Basic on-page SEO setup",
+  "Click-to-call functionality",
+  "Social media links",
+  "Basic performance optimization",
+  "One round of revisions",
+  "Website launch assistance",
 ];
 
 function Item({ children }: { children: string }) {
@@ -56,40 +37,34 @@ export function PricingSection() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground max-w-[18ch]">
-            One managed service. Two ways to start.
+            One package. One simple price.
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_1fr] items-start">
-          {/* Featured: Website & Care */}
+        <div className="mt-14 grid gap-6 lg:grid-cols-[1.3fr_1fr] items-start">
           <Reveal>
             <div
               className="rounded-3xl border border-primary/40 bg-card/60 p-8 md:p-10"
               style={{ boxShadow: "var(--shadow-glow)" }}
             >
-              <div className="flex flex-wrap items-center gap-3">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
-                  Website &amp; Care
-                </h3>
-                <span className="rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary-foreground">
-                  Most popular
-                </span>
-              </div>
-              <p className="mt-6 flex items-baseline gap-2">
+              <h3 className="font-display text-2xl font-semibold text-foreground">
+                {PACKAGE_NAME}
+              </h3>
+              <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span className="font-display text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground">
-                  $149
+                  {PACKAGE_PRICE}
                 </span>
-                <span className="text-muted-foreground">/month</span>
+                <span className="text-muted-foreground">— One-Time Payment</span>
               </p>
-              <p className="mt-3 font-mono text-sm uppercase tracking-[0.14em] text-primary">
-                $0 upfront
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                12-month initial commitment, then month-to-month.
+              <p className="mt-3 text-sm text-muted-foreground">
+                No monthly website subscription.
               </p>
 
-              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                {carePlan.map((f) => (
+              <p className="mt-8 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                What you get
+              </p>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {packageFeatures.map((f) => (
                   <Item key={f}>{f}</Item>
                 ))}
               </ul>
@@ -98,52 +73,47 @@ export function PricingSection() {
                 to="/get-started"
                 className="mt-10 inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                Get Started for $0 Upfront
+                Request Your Website
               </Link>
             </div>
           </Reveal>
 
-          {/* Website Ownership */}
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-border bg-card/30 p-8 md:p-10">
-              <h3 className="font-display text-2xl font-semibold text-foreground">
-                Website Ownership
-              </h3>
-              <p className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-4xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground">
-                  $1,499
-                </span>
-                <span className="text-muted-foreground">one-time</span>
-              </p>
-              <p className="mt-3 text-sm text-muted-foreground">Own your website.</p>
-
-              <ul className="mt-8 grid gap-3">
-                {ownershipPlan.map((f) => (
-                  <Item key={f}>{f}</Item>
-                ))}
-              </ul>
-
-              <p className="mt-8 text-sm text-muted-foreground">
-                50% upfront • 50% before launch
-              </p>
-
-              <Link
-                to="/get-started"
-                className="mt-8 inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-border px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-foreground hover:border-primary hover:text-primary transition-colors"
-              >
-                Get Started
-              </Link>
+            <div className="space-y-6 rounded-3xl border border-border bg-card/30 p-8 md:p-10 text-sm text-muted-foreground leading-relaxed">
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  Ownership
+                </h3>
+                <p className="mt-2">
+                  The $1,250 fee covers the agreed website design and development
+                  deliverables. Once the project is complete and all agreed payments are
+                  made, you own those deliverables, subject to applicable third-party
+                  licenses and service terms.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  Ongoing costs
+                </h3>
+                <p className="mt-2">
+                  Domain registration, hosting, premium software, and other third-party
+                  services may have separate ongoing costs depending on your setup.
+                  These are not included in the $1,250 fee.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  Optional help after launch
+                </h3>
+                <p className="mt-2">
+                  Maintenance, updates, and additional development are optional and
+                  quoted separately. Need more than five pages or extra features? Contact
+                  us for a separately quoted project.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
-
-        <Reveal delay={80}>
-          <p className="mt-8 text-sm text-muted-foreground max-w-[70ch]">
-            Bought your website outright? You can move to Website &amp; Care for
-            $149/month at any time to have hosting, maintenance, updates, and support
-            handled for you.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

@@ -8,44 +8,40 @@ import { Reveal } from "./Reveal";
 
 export const faqs = [
   {
-    q: "Is there an upfront fee?",
-    a: "No. Website & Care is $149/month with $0 upfront.",
+    q: "What is included in the $1,250 Professional Website?",
+    a: "Up to 5 custom-designed pages, mobile-responsive design, contact form integration, basic on-page SEO setup, click-to-call functionality, social media links, basic performance optimization, one round of revisions, and website launch assistance.",
   },
   {
-    q: "What does $149/month include?",
-    a: "It includes your website, hosting, SSL/security, backups, monitoring, technical maintenance, basic SEO maintenance, domain management while active, reasonable website updates, standard website features, and ongoing support.",
+    q: "Is the $1,250 payment one-time?",
+    a: "Yes. The Professional Website is a one-time $1,250 fee for the agreed design and development deliverables. There is no monthly website subscription. Payment terms are confirmed before work begins.",
   },
   {
     q: "Do I own my website?",
-    a: "Yes. You own your website and domain. Armstrong Digital retains reusable templates, internal tools, systems, and third-party components subject to their licenses.",
+    a: "Yes. After the project is completed and all agreed payments are made, you receive ownership of the agreed deliverables, subject to applicable third-party licenses and service terms.",
   },
   {
-    q: "What happens if I cancel?",
-    a: "Website & Care has a 12-month initial commitment. After the first 12 months, it becomes month-to-month with 30 days' notice. You can take your website and domain with you.",
+    q: "Are domain and hosting costs included?",
+    a: "No. Domain registration, hosting, premium software, and other third-party services may have separate ongoing costs depending on your setup. We'll walk you through the options before launch.",
   },
   {
-    q: "Can I take my website with me?",
-    a: "Yes. Your website and domain can be transferred to another hosting provider at no charge.",
+    q: "Can I request additional pages?",
+    a: "Yes. Projects that need more than five pages or extra functionality can be quoted separately.",
   },
   {
-    q: "Do you handle my domain?",
-    a: "Yes. For Website & Care, domain registration and renewal are included while your service remains active. The domain is registered in your name.",
+    q: "Can you redesign my existing website?",
+    a: "Yes. Share your current website URL in the inquiry form and we'll review it as part of your project.",
   },
   {
-    q: "Can you make changes to my website?",
-    a: "Yes. Website & Care includes reasonable website updates and changes. Major redesigns, additional pages, e-commerce, complex integrations, or substantial new functionality may require a separate quote.",
+    q: "Can I request updates after launch?",
+    a: "Yes. Updates after launch are available through a separate quote. The package includes one round of revisions before launch.",
   },
   {
-    q: "What happens after 12 months?",
-    a: "After the initial 12-month commitment, Website & Care becomes month-to-month with 30 days' notice.",
+    q: "Do you offer ongoing maintenance?",
+    a: "Yes, optionally. Website maintenance, updates, and additional development are available through a separate quote. They are not required.",
   },
   {
-    q: "Can you build more than 5 pages?",
-    a: "Yes. Additional pages can be added for an additional fee depending on the project.",
-  },
-  {
-    q: "Do you offer SEO?",
-    a: "Basic SEO setup and maintenance are included. Advanced SEO services are available separately. We do not guarantee search rankings or traffic.",
+    q: "What is the process for getting started?",
+    a: "Fill out the project inquiry form and we'll reach out to discuss your business. The project scope, timeline, payment terms, revision policy, and deliverables are confirmed before any work begins.",
   },
 ];
 
