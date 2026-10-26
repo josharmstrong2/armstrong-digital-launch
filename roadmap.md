@@ -9,6 +9,7 @@
 - [x] Get Started page reuses existing contact_submissions lead form
 - [x] SEO: per-route titles, descriptions, OG tags, canonical, sitemap
 - [x] Contact section with Web3Forms form (submissions emailed to josh@armstrong-digital.com)
+- [x] Switched to single $1,250 one-time Professional Website package (no subscription)
 
 ## Later phases
 - [x] Portfolio demo sites (all four categories live)
