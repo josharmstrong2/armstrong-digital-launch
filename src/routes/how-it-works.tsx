@@ -7,7 +7,7 @@ import { Footer } from "@/components/site/Footer";
 
 const title = "How It Works — Armstrong Digital";
 const description =
-  "Four simple steps: tell us about your business, we build your website, you review it, and we launch and manage it. $0 upfront, $149/month.";
+  "Four simple steps: tell us about your business, we build your website, you review it, and we help you launch it. One flat $1,250 fee.";
 const url = "https://armstrong-digital.lovable.app/how-it-works";
 
 export const Route = createFileRoute("/how-it-works")({

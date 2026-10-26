@@ -2,9 +2,9 @@ import { Reveal } from "./Reveal";
 
 const items = [
   { t: "Custom Website", d: "Built for your business." },
-  { t: "Fully Managed", d: "We handle the technical work." },
-  { t: "Ongoing Support", d: "Need a change? Just ask." },
-  { t: "You Own It", d: "Your website stays yours." },
+  { t: "One-Time Price", d: "$1,250 — no monthly website subscription." },
+  { t: "Launch Assistance", d: "We help you get your site live." },
+  { t: "You Own It", d: "Agreed deliverables are yours once paid." },
 ];
 
 export function ValueProps() {

@@ -6,7 +6,7 @@ import { Footer } from "@/components/site/Footer";
 
 const title = "Portfolio — Websites for Local Service Businesses | Armstrong Digital";
 const description =
-  "Examples of professional websites designed for landscaping, roofing, auto detailing, and cleaning businesses — built and managed by Armstrong Digital.";
+  "Examples of professional websites designed for landscaping, roofing, auto detailing, and cleaning businesses — designed by Armstrong Digital.";
 const url = "https://armstrong-digital.lovable.app/portfolio";
 
 export const Route = createFileRoute("/portfolio")({

@@ -4,9 +4,9 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
-const title = "Get Started — Let's Build Your Website | Armstrong Digital";
+const title = "Get Your Website — Project Inquiry | Armstrong Digital";
 const description =
-  "Tell us a little about your business and we'll build your website. $0 upfront, $149/month with hosting, maintenance, and support included.";
+  "Tell us a little about your business and we'll follow up about your project. Professional Website: $1,250 one-time payment.";
 const url = "https://armstrong-digital.lovable.app/get-started";
 
 export const Route = createFileRoute("/get-started")({
@@ -38,7 +38,7 @@ function GetStartedPage() {
             Tell us a little about your business. It takes about a minute.
           </p>
           <p className="mt-4 font-mono text-sm uppercase tracking-[0.18em] text-primary">
-            $0 Upfront • $149/Month
+            Professional Website • $1,250 — One-Time Payment
           </p>
           <div className="mt-12">
             <LeadForm />
