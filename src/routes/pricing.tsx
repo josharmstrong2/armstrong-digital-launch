@@ -34,7 +34,7 @@ function PricingPage() {
         <section className="px-5 md:px-8 pt-16 pb-4 md:pt-24">
           <div className="max-w-[1280px] mx-auto">
             <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground max-w-[16ch]">
-              One package. One simple price.
+              Simple, transparent website pricing.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-[58ch] leading-relaxed">
               No monthly website subscription and no competing tiers — just one
