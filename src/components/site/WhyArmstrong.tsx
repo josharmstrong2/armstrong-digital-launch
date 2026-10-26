@@ -2,8 +2,8 @@ import { Reveal } from "./Reveal";
 
 const points = [
   { t: "Professional Quality", d: "Built specifically for your business." },
-  { t: "Completely Managed", d: "We handle the website for you." },
-  { t: "You Own It", d: "Your website and domain belong to you." },
+  { t: "One Simple Price", d: "$1,250 one-time. No monthly website subscription." },
+  { t: "You Own It", d: "The agreed deliverables are yours once the project is paid in full." },
   { t: "Personal Service", d: "Direct support when you need it." },
 ];
 
@@ -22,7 +22,7 @@ export function WhyArmstrong() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground max-w-[20ch]">
-            Built for Your Business. Managed for You.
+            Professional Websites. One Simple Price.
           </h2>
         </Reveal>
 

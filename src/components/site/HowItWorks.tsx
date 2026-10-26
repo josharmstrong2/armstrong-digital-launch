@@ -19,8 +19,8 @@ export const steps = [
   },
   {
     n: "04",
-    title: "We Launch & Manage It",
-    desc: "We publish it and take care of hosting, security, maintenance, and updates.",
+    title: "We Launch It",
+    desc: "We help you launch it. Ongoing maintenance and updates are optional and quoted separately.",
   },
 ];
 
@@ -65,7 +65,7 @@ export function HowItWorks({ showCta = true }: { showCta?: boolean }) {
               to="/get-started"
               className="mt-12 inline-flex items-center rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Get Started for $0 Upfront
+              Get Your Website
             </Link>
           </Reveal>
         )}

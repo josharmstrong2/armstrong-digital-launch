@@ -15,7 +15,7 @@ export function FinalCTA() {
         </Reveal>
         <Reveal delay={100}>
           <p className="mt-6 font-mono text-sm uppercase tracking-[0.18em] text-primary">
-            $0 Upfront • $149/Month
+            Professional Website • $1,250 — One-Time Payment
           </p>
         </Reveal>
         <Reveal delay={160}>
@@ -24,7 +24,7 @@ export function FinalCTA() {
               to="/get-started"
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Get Started
+              Get Your Website
             </Link>
             <a
               href="tel:+12483092722"

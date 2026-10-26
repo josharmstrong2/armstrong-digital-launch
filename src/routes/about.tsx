@@ -7,7 +7,7 @@ import { Footer } from "@/components/site/Footer";
 
 const title = "About — Armstrong Digital";
 const description =
-  "Armstrong Digital builds, hosts, and maintains professional websites for small businesses. Professional websites, personal service — built for your business, managed for you.";
+  "Armstrong Digital designs professional websites for small businesses for a flat $1,250 one-time fee. Personal service, no monthly website subscription.";
 const url = "https://armstrong-digital.lovable.app/about";
 
 export const Route = createFileRoute("/about")({

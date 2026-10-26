@@ -22,16 +22,16 @@ export function About({ showLink = true }: { showLink?: boolean }) {
           <Reveal delay={100}>
             <p>
               Armstrong Digital exists to help small businesses get a professional online
-              presence without a large upfront agency bill — and without having to manage
-              the technical side themselves.
+              presence for one simple, one-time price — without a large agency bill or a
+              monthly website subscription.
             </p>
           </Reveal>
           <Reveal delay={160}>
             <p>
               You get a website built around your actual business: your services, your
-              service area, and the customers you want to reach. Hosting, security,
-              backups, monitoring, and updates are handled for you, and when you need a
-              change you talk to a person, not a ticket queue.
+              service area, and the customers you want to reach. You work directly
+              with a person, not a ticket queue, and if you want help after launch,
+              maintenance and updates are available through a separate quote.
             </p>
           </Reveal>
           {showLink && (

@@ -3,8 +3,8 @@ import { Reveal } from "./Reveal";
 import {
   Paintbrush,
   Smartphone,
-  Server,
-  ShieldCheck,
+  Phone,
+  Gauge,
   Search,
   MessageCircle,
 } from "lucide-react";
@@ -12,14 +12,10 @@ import {
 const features = [
   { icon: Paintbrush, t: "Custom Design", d: "Built specifically for your business." },
   { icon: Smartphone, t: "Mobile Ready", d: "Looks great on phones, tablets and desktops." },
-  { icon: Server, t: "Hosting Included", d: "Fast, secure hosting handled for you." },
-  {
-    icon: ShieldCheck,
-    t: "Always Maintained",
-    d: "Security, backups, monitoring, and technical maintenance.",
-  },
-  { icon: Search, t: "SEO Ready", d: "Basic SEO setup and ongoing maintenance included." },
-  { icon: MessageCircle, t: "Ongoing Support", d: "Need a change? Just ask." },
+  { icon: Phone, t: "Click-to-Call", d: "Customers can call you with one tap, plus links to your social media." },
+  { icon: Gauge, t: "Fast Loading", d: "Basic performance optimization so pages load quickly." },
+  { icon: Search, t: "SEO Ready", d: "Basic on-page SEO setup so search engines understand your site." },
+  { icon: MessageCircle, t: "Contact Form", d: "A working contact form, one round of revisions, and launch assistance." },
 ];
 
 export function Included() {
@@ -33,7 +29,7 @@ export function Included() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-[-0.04em] text-foreground max-w-[18ch]">
-            Everything Your Business Website Needs.
+            Everything in the Professional Website.
           </h2>
         </Reveal>
 
@@ -54,7 +50,7 @@ export function Included() {
         <Reveal delay={120}>
           <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
             <p className="font-mono text-sm uppercase tracking-[0.18em] text-primary">
-              $0 Upfront • $149/Month
+              $1,250 — One-Time Payment
             </p>
             <Link
               to="/get-started"

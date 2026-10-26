@@ -5,9 +5,9 @@ import { FAQ } from "@/components/site/FAQ";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 
-const title = "Pricing — $149/Month Managed Websites | Armstrong Digital";
+const title = "Pricing — $1,250 Flat-Fee Small Business Website | Armstrong Digital";
 const description =
-  "Website & Care is $149/month with $0 upfront: custom website, hosting, security, backups, maintenance, basic SEO, and support. Or own your website for $1,499 one-time.";
+  "One Professional Website package for $1,250, paid once: up to 5 custom pages, mobile-responsive design, contact form, basic SEO, click-to-call, and launch assistance.";
 const url = "https://armstrong-digital.lovable.app/pricing";
 
 export const Route = createFileRoute("/pricing")({
@@ -34,11 +34,11 @@ function PricingPage() {
         <section className="px-5 md:px-8 pt-16 pb-4 md:pt-24">
           <div className="max-w-[1280px] mx-auto">
             <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-[-0.04em] text-foreground max-w-[16ch]">
-              Simple pricing for a fully managed website.
+              One package. One simple price.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-[58ch] leading-relaxed">
-              No agency retainer, no surprise invoices. Start with $0 upfront, or buy
-              your website outright.
+              No monthly website subscription and no competing tiers — just one
+              professional website for a one-time fee.
             </p>
           </div>
         </section>

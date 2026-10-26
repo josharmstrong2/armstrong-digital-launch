@@ -14,9 +14,9 @@ import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
-const title = "Armstrong Digital — Managed Small Business Websites, $149/Month";
+const title = "Armstrong Digital — Affordable Small Business Website Design, $1,250 Flat Fee";
 const description =
-  "Your website professionally built and completely managed. $0 upfront, $149/month — custom design, hosting, maintenance, basic SEO, and support for local service businesses.";
+  "Professional website development for small businesses for a one-time $1,250 fee. Up to 5 custom pages, mobile-responsive design, contact form, and basic SEO.";
 const url = "https://armstrong-digital.lovable.app/";
 
 export const Route = createFileRoute("/")({
@@ -43,23 +43,15 @@ export const Route = createFileRoute("/")({
           email: "josh@armstrong-digital.com",
           telephone: "+1-248-309-2722",
           areaServed: "United States",
-          slogan: "Built for your business. Managed for you.",
+          slogan: "Professional Websites. One Simple Price.",
           offers: [
             {
               "@type": "Offer",
-              name: "Website & Care",
-              price: "149",
+              name: "Professional Website",
+              price: "1250",
               priceCurrency: "USD",
               description:
-                "Custom website, hosting, SSL, backups, monitoring, basic SEO, maintenance, updates, and support for $149/month with $0 upfront.",
-            },
-            {
-              "@type": "Offer",
-              name: "Website Ownership",
-              price: "1499",
-              priceCurrency: "USD",
-              description:
-                "One-time custom website build with domain connection, launch, first-year domain registration, hosting, and 30 days post-launch support.",
+                "One-time fee: up to 5 custom pages, mobile-responsive design, contact form, basic on-page SEO, click-to-call, social links, basic performance optimization, one round of revisions, and launch assistance.",
             },
           ],
         }),
