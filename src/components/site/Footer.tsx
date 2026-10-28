@@ -45,10 +45,10 @@ export function Footer() {
               (248) 309-2722
             </a>
             <a
-              href="mailto:josh@armstrong-digital.com"
+              href="mailto:jricharm7@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors w-fit break-all"
             >
-              josh@armstrong-digital.com
+              jricharm7@gmail.com
             </a>
           </div>
         </div>

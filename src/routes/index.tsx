@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
           name: "Armstrong Digital",
           description,
           url,
-          email: "josh@armstrong-digital.com",
+          email: "jricharm7@gmail.com",
           telephone: "+1-248-309-2722",
           areaServed: "United States",
           slogan: "Professional Websites. One Simple Price.",

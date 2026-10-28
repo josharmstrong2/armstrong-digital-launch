@@ -60,7 +60,7 @@ export function LeadForm() {
     setSubmitting(false);
 
     if (!ok) {
-      toast.error("Something went wrong. Please email josh@armstrong-digital.com directly.");
+      toast.error("Something went wrong. Please email jricharm7@gmail.com directly.");
       return;
     }
 
@@ -147,9 +147,9 @@ export function LeadForm() {
           or email{" "}
           <a
             className="text-primary hover:underline break-all"
-            href="mailto:josh@armstrong-digital.com"
+            href="mailto:jricharm7@gmail.com"
           >
-            josh@armstrong-digital.com
+            jricharm7@gmail.com
           </a>
           .
         </p>
