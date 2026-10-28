@@ -1,7 +1,7 @@
 import { supabase } from "@/integrations/supabase/client";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
-const ACCESS_KEY = "4a29109f-f4ea-49cc-9227-7ded95af32c7";
+const ACCESS_KEY = "3614e130-df6a-4054-8c5d-0dd985847100";
 
 export type Inquiry = {
   source: "Homepage contact form" | "Get Started form";
