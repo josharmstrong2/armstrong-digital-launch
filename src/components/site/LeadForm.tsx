@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { submitInquiry } from "@/lib/submit-inquiry";
 
 const businessTypes = [
   "Landscaping / Lawn Care",
@@ -56,10 +56,10 @@ export function LeadForm() {
     }
 
     setSubmitting(true);
-    const { error } = await supabase.from("contact_submissions").insert(payload);
+    const ok = await submitInquiry({ source: "Get Started form", ...payload });
     setSubmitting(false);
 
-    if (error) {
+    if (!ok) {
       toast.error("Something went wrong. Please email josh@armstrong-digital.com directly.");
       return;
     }

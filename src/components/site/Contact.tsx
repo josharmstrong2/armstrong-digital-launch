@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
-
-const WEB3FORMS_URL = "https://api.web3forms.com/submit";
-const ACCESS_KEY = "4a29109f-f4ea-49cc-9227-7ded95af32c7";
+import { submitInquiry } from "@/lib/submit-inquiry";
 
 type Field = "name" | "email" | "phone" | "message";
 type Status = "idle" | "sending" | "success" | "error";
@@ -48,34 +46,17 @@ export function Contact() {
     if (Object.keys(next).length > 0) return;
 
     setStatus("sending");
-    try {
-      const res = await fetch(WEB3FORMS_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: "New inquiry from Armstrong Digital website",
-          from_name: "Armstrong Digital Website",
-          botcheck: "",
-          name: values.name.trim(),
-          email: values.email.trim(),
-          phone: values.phone.trim(),
-          message: values.message.trim(),
-        }),
-      });
-      const data = (await res.json().catch(() => null)) as
-        | { success?: boolean }
-        | null;
-      if (res.ok && data?.success) {
-        setStatus("success");
-        setValues(initialValues);
-      } else {
-        setStatus("error");
-      }
-    } catch {
+    const ok = await submitInquiry({
+      source: "Homepage contact form",
+      name: values.name,
+      email: values.email,
+      phone: values.phone,
+      message: values.message,
+    });
+    if (ok) {
+      setStatus("success");
+      setValues(initialValues);
+    } else {
       setStatus("error");
     }
   };
