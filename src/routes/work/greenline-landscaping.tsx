@@ -273,7 +273,7 @@ function DemoSite() {
                 Call 248-555-0147
               </a>
               <a
-                href="mailto:josh@armstrong-digital.com?subject=Landscaping%20demo%20inquiry"
+                href="mailto:jricharm7@gmail.com?subject=Landscaping%20demo%20inquiry"
                 className="rounded-full border border-[#1c2b21]/25 px-8 py-4 font-medium hover:bg-[#1c2b21]/5 transition-colors"
               >
                 Email us
